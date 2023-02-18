@@ -22,7 +22,6 @@
 }
 
 body {
-
     font-family: Montserrat, serif;
     font-weight: 400;
     font-size: 14px;
@@ -32,29 +31,31 @@ body {
     background-color: var(--page-bg);
 }
 
+.wrapper {
+    position: relative;
+}
+
 .container {
     display: flex;
     flex-direction: column;
     row-gap: 10px;
 
-    margin: 40px auto;
-    padding: 20px;
-    max-width: 438px;
+    padding: 60px 20px 20px;
 }
 
-.column-container {
-    padding: 0;
-}
-
-.primary-header {
+.header-2 {
     font-weight: 700;
     font-size: 1.8em;
 }
 
-.accented-header {
+.header-3 {
+    font-weight: 400;
+    font-size: 1.6em;
+}
+
+.header-4 {
     font-weight: 700;
-    font-size: 1.7em;
-    color: var(--accent);
+    font-size: 1.6em;
 }
 
 .common-text {
@@ -65,58 +66,59 @@ body {
     text-align: justify;
 }
 
-/* Abstract images */
 
-.abstract-image {
+.image-right,
+.image-left {
     position: absolute;
-    z-index: -1;
-
-    max-width: 200px;
-    max-height: 200px;
-    display: none;
+    width: 250px;
+    height: 250px;
 }
 
-.right-image {
-    right: -60px;
-    top: -40px;
+.image-right {
+    position: absolute;
+    top: -20px;
+    right: -90px;
+    /* z-index: -1; */
 }
 
-.left-image {
-    left: 0;
-    bottom: -120px;
+.image-left {
+    position: absolute;
+    bottom: -30px;
+    left: -60px;
+    /* z-index: -1; */
 }
 
-.aside-block {}
+.content-container {
+    position: relative;
+    min-width: 280px;
 
-.main-block {}
+    background: var(--lightgrey);
+    box-shadow: var(--box-shadow);
+    border-radius: 30px;
+}
+
 
 .person {
+    background-color: var(--white);
+    border-radius: 30px 30px 0px 0px;
     display: flex;
     flex-direction: column;
+    justify-content: end;
     align-items: center;
-    justify-content: flex-end;
-
     position: relative;
-
-    height: 330px;
-    padding: 0 20px 30px;
-
-    background-color: var(--content-bg-light);
-    border-radius: 30px 30px 0 0;
+    height: 340px;
 }
 
 .person__photo {
     position: absolute;
-    width: 180px;
-    height: 180px;
-    top: -30px;
+    width: 200px;
+    height: 200px;
+    top: -35px;
     border-radius: 50px;
 }
 
 .person__header {
-    font-weight: 400;
-    margin-bottom: 16px;
-    letter-spacing: 0.5px;
+    margin-bottom: 24px;
 }
 
 .person__header span {
@@ -125,11 +127,9 @@ body {
 
 .person__label {
     font-weight: 500;
-    font-size: 1.2em;
     background-color: var(--lightgrey);
     border-radius: 75px;
-    padding: 4px 20px;
-    margin-bottom: 30px;
+    padding: 4px 24px;
 }
 
 .person__social {
@@ -137,36 +137,31 @@ body {
     justify-content: center;
     align-items: center;
     column-gap: 16px;
-}
 
-.person__social img {
-    width: 30px;
-    height: 30px;
+    padding-top: 30px;
+    padding-bottom: 25px;
 }
 
 .about {
     display: flex;
     flex-direction: column;
-
-    padding: 30px 30px;
-    background-color: var(--lightgrey);
-
-    border-radius: 0 0 30px 30px;
+    padding: 30px 20px;
 }
 
 .about__header {
+    color: var(--accent);
     margin-left: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .about__contacts-link {
     display: flex;
     align-items: center;
-    margin-bottom: 1em;
+    margin-bottom: 20px;
 }
 
 .about__contacts-link:last-child {
-    margin-bottom: 3em;
+    margin-bottom: 50px;
 }
 
 .about__contacts-link a {
@@ -180,22 +175,15 @@ body {
 }
 
 .about__scills-list {
-    margin-bottom: 3em;
-    /* margin-left: 20px; */
-}
-
-ol.about__scills-list {
-    list-style-position: inside;
+    margin-bottom: 50px;
+    margin-left: 20px;
 }
 
 .about__scills-list-item {
     color: var(--black);
     font-weight: 500;
-    font-size: 1.1em;
-    margin-bottom: 1em;
+    margin-bottom: 10px;
 }
-
-/* Button CV */
 
 /* .about__btn {
     visibility: hidden;
@@ -225,7 +213,7 @@ ol.about__scills-list {
 .profile {
     background-color: var(--white);
     border-radius: 30px 30px 0px 0px;
-    padding: 30px;
+    padding: 30px 32px;
 }
 
 .profile__header::after {
@@ -242,10 +230,8 @@ ol.about__scills-list {
     margin-top: 1.2em;
 }
 
-.exp-and-edu-block {
-    background-color: var(--content-bg-grey);
-    border-radius: 0px 0px 30px 30px;
-    padding: 30px;
+.experience {
+    padding: 30px 32px;
 }
 
 .experience__header {
@@ -278,9 +264,6 @@ ol.about__scills-list {
     font-weight: 500;
     margin-bottom: 20px;
 }
-
-
-
 
 /* @media (min-width: 621px) {
 
