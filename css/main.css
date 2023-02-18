@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Montserrat:wght@400;500;700&display=swap');
 
 :root {
+    /* Difinition of color names */
     --white: #fff;
     --black: #171718;
     --lightblack: #4b6f80;
@@ -9,15 +10,20 @@
     --grey: #e4e4e4;
     --lightgrey: #f6f8f9;
 
+    /* Text colors */
     --primary-text-color: var(--black);
     --secondary-text-color: var(--lightblack);
+    --accent: var(--orange);
 
+    /* Text sizes */
+    --root-font-size: 14px;
+
+    /* Background colors */
     --page-bg: var(--grey);
     --content-bg-light: var(--white);
     --content-bg-grey: var(--lightgrey);
 
-    --accent: var(--orange);
-
+    /* Shadows */
     --box-shadow: 0px 4px 74px rgba(69, 69, 69, 0.25);
 }
 
@@ -25,7 +31,7 @@ body {
 
     font-family: Montserrat, serif;
     font-weight: 400;
-    font-size: 14px;
+    font-size: var(--root-font-size);
     line-height: 1.2;
 
     color: var(--primary-text-color);
@@ -37,13 +43,14 @@ body {
     flex-direction: column;
     row-gap: 10px;
 
-    margin: 40px auto;
-    padding: 20px;
+    margin: 0px auto;
+    padding: 60px 20px 20px;
     max-width: 438px;
 }
 
 .column-container {
-    padding: 0;
+    border-radius: 30px;
+    background-color: var(--content-bg-grey);
 }
 
 .primary-header {
@@ -71,8 +78,8 @@ body {
     position: absolute;
     z-index: -1;
 
-    max-width: 200px;
-    max-height: 200px;
+    width: 400px;
+    height: 400px;
     display: none;
 }
 
@@ -98,7 +105,7 @@ body {
 
     position: relative;
 
-    height: 330px;
+    height: 25em;
     padding: 0 20px 30px;
 
     background-color: var(--content-bg-light);
@@ -115,7 +122,7 @@ body {
 
 .person__header {
     font-weight: 400;
-    margin-bottom: 16px;
+    margin-bottom: 1em;
     letter-spacing: 0.5px;
 }
 
@@ -129,7 +136,7 @@ body {
     background-color: var(--lightgrey);
     border-radius: 75px;
     padding: 4px 20px;
-    margin-bottom: 30px;
+    margin-bottom: 2em;
 }
 
 .person__social {
@@ -197,11 +204,14 @@ ol.about__scills-list {
 
 /* Button CV */
 
-/* .about__btn {
-    visibility: hidden;
-} */
+.about__btn {
+    display: flex;
+    justify-content: center;
+    /* visibility: hidden; */
+}
 
 .button {
+    width: 180px;
     background: #FFAA01;
     box-shadow: 0px 4px 15px rgba(255, 170, 1, 0.29);
     border-radius: 21px;
@@ -281,22 +291,84 @@ ol.about__scills-list {
 
 .invisible {
     display: none;
-    
+
     padding: 30px;
     text-align: center;
 }
-
 
 @media (max-width: 319px) {
     .invisible {
         display: block;
     }
-    
+
     .container {
         display: none;
     }
 }
 
-/* @media (min-width: 621px) {
+@media (min-width: 479px) {
+    :root {
+        --root-font-size: 15px;
+    }
 
-} */
+    .person__photo {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: row;
+        column-gap: 20px;
+        justify-content: center;
+
+        padding: 60px 30px 60px;
+        max-width: 900px;
+    }
+
+    .aside-block {
+        flex: 1 1 40%;
+    }
+
+    .main-block {
+        flex: 1 1 60%;
+    }
+
+}
+
+@media (min-width: 992px) {
+    :root {
+        --root-font-size: 16px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        column-gap: 30px;
+        justify-content: center;
+
+        padding: 80px 30px 60px;
+        max-width: 1200px;
+    }
+
+    .about {
+        padding: 30px 60px;
+    }
+
+    .aside-block {
+        min-width: 370px;
+        flex: unset;
+    }
+
+    .main-block {
+        max-width: 740px;
+        flex: unset;
+    }
+
+    .person__photo {
+        width: 220px;
+        height: 220px;
+    }
+}
