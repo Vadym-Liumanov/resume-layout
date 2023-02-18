@@ -279,8 +279,23 @@ ol.about__scills-list {
     margin-bottom: 20px;
 }
 
+.invisible {
+    display: none;
+    
+    padding: 30px;
+    text-align: center;
+}
 
 
+@media (max-width: 319px) {
+    .invisible {
+        display: block;
+    }
+    
+    .container {
+        display: none;
+    }
+}
 
 /* @media (min-width: 621px) {
 
